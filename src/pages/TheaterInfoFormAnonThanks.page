@@ -1,0 +1,12 @@
+<apex:page sidebar="false" showHeader="false">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body"> 
+      <apex:outputPanel layout="block" style="width: 75%; margin: 30px auto; text-align: center; ">
+        <apex:outputText style="font-weight: bold; font-size: 40px;" value="Thank You!"></apex:outputText> <br/>
+        <apex:outputText style="font-size: 30px;" value="Your form has been submitted to RealD's Theatre Information System"></apex:outputText><br/><br/>
+        <apex:outputLink value="{!$Page.TIFHomePage}">return to homepage</apex:outputLink>
+      </apex:outputPanel>
+      
+    </apex:define>
+  </apex:composition>
+</apex:page>

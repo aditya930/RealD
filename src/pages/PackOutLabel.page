@@ -1,0 +1,8 @@
+<apex:page standardController="Asset"
+           extensions="PackOutController"
+           sidebar="false" 
+           showheader="false"
+           action="{!createPackout}"
+           standardStylesheets="false">
+               <apex:pageMessages />
+</apex:page>

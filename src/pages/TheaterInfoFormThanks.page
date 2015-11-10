@@ -1,0 +1,29 @@
+<apex:page sidebar="false" showHeader="false" controller="TheaterInfoFormThanksController">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body"> 
+      <apex:outputPanel id="SubmittedMsg" layout="block" style="width: 75%; margin: 30px auto; text-align: center; " rendered="{!recordCompleted}">
+        <apex:outputText style="font-weight: bold; font-size: 40px;" value="Thank You!"></apex:outputText> <br/>
+        <apex:outputText style="font-size: 30px;" value="Your form has been submitted to RealD's Theatre Information System"></apex:outputText><br/><br/>
+        
+        <apex:panelGrid columns="3" style="margin: 10px auto;">
+          <apex:outputLink value="{!$Page.TheaterInfoForm}">Create New Form</apex:outputLink>
+          <apex:outputText >|</apex:outputText>
+          <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">{!$Label.site.logout}</apex:outputLink>
+        </apex:panelGrid>
+      </apex:outputPanel>
+      
+      <apex:outputPanel id="UnSubmittedMsg" layout="block" style="width: 75%; margin: 30px auto; text-align: center; " rendered="{!NOT(recordCompleted)}">
+        <apex:outputText style="font-weight: bold; font-size: 40px;" value="Thank You!"></apex:outputText> <br/>
+        <apex:outputText style="font-size: 30px;" value="Your form has been saved to RealD's Theatre Information System." /><br/>
+        <apex:outputText style="font-size: 30px;" value="Be sure to login again to complete and submit your form" /><br/><br/>
+        
+        <apex:panelGrid columns="3" style="margin: 10px auto;">
+          <apex:outputLink value="{!$Page.TheaterInfoForm}">Return to Previously Saved Form</apex:outputLink>
+          <apex:outputText >|</apex:outputText>
+          <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">{!$Label.site.logout}</apex:outputLink>
+        </apex:panelGrid>
+        
+      </apex:outputPanel>      
+    </apex:define>
+  </apex:composition>
+</apex:page>

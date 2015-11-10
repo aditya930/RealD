@@ -1,0 +1,385 @@
+<apex:page standardController="Asset"
+    extensions="finalProductBuildController" sidebar="true"
+    showheader="true"
+    title="Final Product Build">
+    <apex:sectionHeader title="Build Final Product" />
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Build Final Product" id="FinalBuildPage"
+            mode="new">
+
+            <apex:pageBlockButtons rendered="{!pAsset.Product__c != ''}">
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+            <apex:actionRegion >
+                <apex:pageBlockSection title="Product" columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Product" />
+                        <apex:outputPanel >
+                            <apex:inputField Value="{!pAsset.Product__c}" required="TRUE">
+                                <apex:actionSupport event="onchange" rerender="FinalBuildPage"
+                                    status="status" />
+                            </apex:inputField>
+                            <apex:actionStatus startText="Updating Page..." id="status" />
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                    </apex:pageblocksection>
+            </apex:actionRegion>
+
+            <apex:pageBlockSection title="Asset Information" columns="2"
+                rendered="{!pAsset.Product__c != ''}">
+                <apex:inputField Value="{!pAsset.SerialNumber}" required="TRUE"
+                    rendered="{!pAsset.Product__c != ''}" />
+                <apex:inputField Value="{!pAsset.Operator__c}" required="TRUE"
+                    rendered="{!pAsset.Product__c != ''}" />
+                <apex:inputField Value="{!pAsset.Manufactured_By__c}"
+                    required="TRUE" rendered="{!pAsset.Product__c != ''}" />
+                <apex:inputField Value="{!pAsset.Deviation__c}"
+                    rendered="false" />
+                <apex:inputField Value="{!pAsset.Build_Date__c}" required="TRUE"
+                    rendered="{!pAsset.Product__c != ''}" />
+                </apex:pageblocksection>
+                <apex:pageBlockSection title="Components" columns="1"
+                    rendered="{!pAsset.Product__c != ''}">
+                    
+        <!--XL Components-->                    
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Concave Lens (cv-)" 
+                        rendered="{!pAsset.Product__c == 'XL'}"
+                        required="TRUE"/>
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Convex Lens (cx-)" 
+                        rendered="{!pAsset.Product__c == 'XL'}"
+                        required="TRUE"/>
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Mirror (fm-)" 
+                        rendered="{!pAsset.Product__c == 'XL'}"
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Large Zscreen (lgz-)"
+                        rendered="{!pAsset.Product__c == 'XL'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Small Zscreen (smz-)"
+                        rendered="{!pAsset.Product__c == 'XL'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Wiregrid (wg-)" 
+                        rendered="{!pAsset.Product__c == 'XL'}" 
+                        required="TRUE"/>                         
+                    <apex:inputField Value="{!pAsset.BuildComponent7__c}"
+                        label="Top Cover (tc-)" 
+                        rendered="{!pAsset.Product__c == 'XL'}" />
+
+        <!--XLW Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Small Zscreen (smz-)"
+                        rendered="{!pAsset.Product__c == 'XLW'}"
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Extra Small Zscreen (xsz-)"
+                        rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="PBS Cube (cu-)"
+                        rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (wcv-)"
+                        rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (wcx-)"
+                        rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                     
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (wfm-)" rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent7__c}"
+                        label="Exit Window (ex-)" rendered="{!pAsset.Product__c == 'XLW'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent8__c}"
+                        label="Top Cover (wtc-)" rendered="{!pAsset.Product__c == 'XLW'}" />
+
+        <!--XL-DP (Right) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Large Filter (Right) (lfr-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Small Filter (Right) (sfr-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Wiregrid (wg-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (cv-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (cx-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (fm-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPR'}" 
+                        required="TRUE"/>                                      
+
+        <!--XL-DP (Left) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Large Filter (Left) (lfl-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Small Filter (Left) (sfl-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Wiregrid (wg-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (cv-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (cx-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (fm-)"
+                        rendered="{!pAsset.Product__c == 'XL-DPL'}" 
+                        required="TRUE"/>                                      
+
+        <!--XLW-DP (Right) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Small Filter (Right) (sfr-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Rotator (Passive) (pr-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="PBS Cube (cu-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (wcv-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (wcx-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (wfm-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent7__c}"
+                        label="Exit Window (Right) (exr-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPR'}" 
+                        required="TRUE"/>                                      
+
+        <!--XLW-DP (Left) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Small Filter (Left) (sfl-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Rotator (Passive) (pr-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="PBS Cube (cu-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (wcv-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (wcx-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (wfm-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent7__c}"
+                        label="Exit Window (Left) (exl-)"
+                        rendered="{!pAsset.Product__c == 'XLW-DPL'}" 
+                        required="TRUE"/>                                      
+
+        <!--XL Conditional Access Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Large Zscreen (lgz-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Small Zscreen (smz-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Wiregrid (wg-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent4__c}"
+                        label="Concave Lens (cv-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent5__c}"
+                        label="Convex Lens (cx-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent6__c}"
+                        label="Mirror (fm-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent7__c}"
+                        label="Top Cover (tc-)"
+                        rendered="{!pAsset.Product__c == 'XL CA'}" />
+
+        <!--XLS-002 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (Right) (mgr-)"
+                        rendered="{!pAsset.Product__c == 'XLS-002'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony Filter (Left) (mgl-)"
+                        rendered="{!pAsset.Product__c == 'XLS-002'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--XLS-003 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (Right) (mgr-)"
+                        rendered="{!pAsset.Product__c == 'XLS-003'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony Filter (Left) (mgl-)"
+                        rendered="{!pAsset.Product__c == 'XLS-003'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--XLS Dual (Left) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (Left) (mgl-)"
+                        rendered="{!pAsset.Product__c == 'XLS Dual (Left)'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony Filter (Right) (mgr-)"
+                        rendered="{!pAsset.Product__c == 'XLS Dual (Left)'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--XLS Dual (Right) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (Left) (mgl-)"
+                        rendered="{!pAsset.Product__c == 'XLS Dual (Right)'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony Filter (Right) (mgr-)"
+                        rendered="{!pAsset.Product__c == 'XLS Dual (Right)'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--XLS-502 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (mgn-)"
+                        rendered="{!pAsset.Product__c == 'XLS-502'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony 502 Lens (sl2-)"
+                        rendered="{!pAsset.Product__c == 'XLS-502'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--XLS-503 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Sony Filter (mgn-)"
+                        rendered="{!pAsset.Product__c == 'XLS-503'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Sony 503 Lens (sl3-)"
+                        rendered="{!pAsset.Product__c == 'XLS-503'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--Zscreen V2 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="V2 Zscreen (2zs-)"
+                        rendered="{!pAsset.Product__c == 'Zscreen V2'}" 
+                        required="TRUE"/>                                      
+
+        <!--Zscreen V3 Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="V3 Zscreen (3zs-)"
+                        rendered="{!pAsset.Product__c == 'Zscreen V3'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--Zscreen Conditional Access Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="V3 Zscreen (3zs-)"
+                        rendered="{!pAsset.Product__c == 'Zscreen CA'}" 
+                        required="TRUE"/>                                      
+
+        <!--Control Module Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="V2/V3 Controller (cb-)"
+                        rendered="{!pAsset.Product__c == 'Control Module'}" 
+                        required="TRUE"/>                                      
+                        
+        <!--Post Production Control Module Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Controller (cb-)"
+                        rendered="{!pAsset.Product__c == 'Post Production Control Module'}" 
+                        required="TRUE"/>                                      
+        
+        <!--XLGS Lens Set Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Relay Lens (ryl-)"
+                        rendered="{!pAsset.Product__c == 'XLGS Lens Set'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Zoom Lens A (zml-)"
+                        rendered="{!pAsset.Product__c == 'XLGS Lens Set'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Zoom Lens B (zml-)"
+                        rendered="{!pAsset.Product__c == 'XLGS Lens Set'}" 
+                        required="TRUE"/>                                      
+
+        <!--XLGS DP (Left) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Top Filter (flt-)"
+                        rendered="{!pAsset.Product__c == 'XLGS DP (Left)'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Bottom Filter (flb-)"
+                        rendered="{!pAsset.Product__c == 'XLGS DP (Left)'}" 
+                        required="TRUE"/>                                      
+
+        <!--XLGS DP (Right) Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="Top Filter (frt-)"
+                        rendered="{!pAsset.Product__c == 'XLGS DP (Right)'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent3__c}"
+                        label="Bottom Filter (frb-)"
+                        rendered="{!pAsset.Product__c == 'XLGS DP (Right)'}" 
+                        required="TRUE"/>                                      
+
+        <!--XLGS Polarization Recovery Components-->
+                    <apex:inputField Value="{!pAsset.BuildComponent1__c}"
+                        label="Beam Splitter (bsa-)"
+                        rendered="{!pAsset.Product__c == 'XLGS Polarization Recovery'}" 
+                        required="TRUE"/>                                      
+                    <apex:inputField Value="{!pAsset.BuildComponent2__c}"
+                        label="PBS Cube (gspbs-)"
+                        rendered="{!pAsset.Product__c == 'XLGS Polarization Recovery'}" 
+                        required="TRUE"/>                                      
+                   
+                    
+        </apex:pageblocksection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

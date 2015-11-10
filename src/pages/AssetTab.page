@@ -1,0 +1,3 @@
+<apex:page standardController="Asset">
+<apex:enhancedList type="Asset" height="700" rowsPerPage="50" id="AllAssets" customizable="TRUE"></apex:enhancedList>
+</apex:page>

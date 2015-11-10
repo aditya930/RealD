@@ -1,0 +1,78 @@
+<apex:page showHeader="FALSE" Sidebar="FALSE" title="Manufacturing Home">
+<Head>
+<base target="_parent" />
+</Head>
+<apex:pageBlock >
+  <apex:pageBlockSection Title="1. Enter New  Build Component" columns="3" collapsible="false">
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179E&ent=01I600000006UnQ&Name=wg-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New WireGrid</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001791&ent=01I600000006UnQ&Name=lgz-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Large Zscreen</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179C&ent=01I600000006UnQ&Name=cb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New V2/V3 Controller</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179N&ent=01I600000006UnQ&Name=cv-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XL Concave Lens</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001799&ent=01I600000006UnQ&Name=smz-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Small Zscreen</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179A&ent=01I600000006UnQ&Name=mgl-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3720061-011">New Sony 002/003 Filter (Left)</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179O&ent=01I600000006UnQ&Name=cx-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XL Convex Lens</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000178y&ent=01I600000006UnQ&Name=xsz-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Extra Small Zscreen</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179B&ent=01I600000006UnQ&Name=mgr-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3720061-010">New Sony 002/003 Filter (Right)</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179H&ent=01I600000006UnQ&Name=fm-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XL Mirror</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=0126000000018W3&ent=01I600000006UnQ&Name=2zs-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New V2 Zscreen</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000196h&ent=01I600000006UnQ&Name=mgn-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3880025-001">New Sony 502/503 Filter</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179P&ent=01I600000006UnQ&Name=tc-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XL Top Cover</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179D&ent=01I600000006UnQ&Name=v3z-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New V3 Zscreen</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000196i&ent=01I600000006UnQ&Name=sl2-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=4000017-001">New Sony 502 Lens</apex:outputLink>  
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179I&ent=01I600000006UnQ&Name=cu-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLW PBS Cube</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000178z&ent=01I600000006UnQ&Name=lfl-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Large Filter (Left)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000196j&ent=01I600000006UnQ&Name=sl3-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=4000018-001">New Sony 503 Lens</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179J&ent=01I600000006UnQ&Name=wcv-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLW Concave Lens</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001790&ent=01I600000006UnQ&Name=lfr-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Large Filter (Right)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001BIbAAM&ent=01I600000006UnQ&Name=tc-XL+CA&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLCA Top Cover</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179K&ent=01I600000006UnQ&Name=wcx-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLW Convex Lens</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001797&ent=01I600000006UnQ&Name=sfl-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Small Filter (Left)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Left_Top_Filter__c}&ent=01I600000006UnQ&Name=flt-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3700063-001&00N60000002FnLN=A">New XLGS Left Top Filter</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179L&ent=01I600000006UnQ&Name=wfm-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLW Mirror</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001798&ent=01I600000006UnQ&Name=sfr-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Small Filter (Right)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Left_Bottom_Filter__c}&ent=01I600000006UnQ&Name=flb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3700064-001&00N60000002FnLN=A">New XLGS Left Bottom Filter</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179M&ent=01I600000006UnQ&Name=wtc-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New XLW Top Cover</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000178v&ent=01I600000006UnQ&Name=ex-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Exit Window</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Right_Top_Filter__c}&ent=01I600000006UnQ&Name=frt-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3700063-001&00N60000002FnLN=A">New XLGS Right Top Filter</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001795&ent=01I600000006UnQ&Name=pr-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Rotator, Passive</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000178w&ent=01I600000006UnQ&Name=exl-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Exit Window (Left)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Right_Bottom_Filter__c}&ent=01I600000006UnQ&Name=frb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3700063-001&00N60000002FnLN=A">New XLGS Right Bottom Filter</apex:outputLink>
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Beam_Splitter__c}&ent=01I600000006UnQ&Name=bsa-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=0190006-001">New XLGS Beam Splitter</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000178x&ent=01I600000006UnQ&Name=exr-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New">New Exit Window (Right)</apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Relay_Lens__c}&ent=01I600000006UnQ&Name=ryl-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3900094-001">New XLGS Relay Lens</apex:outputLink>    
+
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_PBS_Cube__c}&ent=01I600000006UnQ&Name=gspbs-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3900089-001">New XLGS PBS Cube</apex:outputLink>
+<apex:outputLink value=""></apex:outputLink>
+<apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType={!$Setup.ManufacturingHomeRecordTypes__c.XLGS_Zoom_Lens__c}&ent=01I600000006UnQ&Name=zml-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}&00N60000002FnLY=New&00N60000002FnLb=3900095-001">New XLGS Zoom Lens</apex:outputLink>
+
+
+ </apex:pageBlockSection>
+ <apex:pageBlockSection Title="2. Build Final Product" columns="3" collapsible="false">
+<apex:outputLink value="/apex/FinalProductBuild?operator={!$User.Id}&manufacturedby={!$User.Manufacturer_Default__c}">Build Final Product</apex:outputLink>
+     <apex:outputLink value="/apex/CAconversion">Convert XL to Conditional Access</apex:outputLink>
+</apex:pageBlockSection>
+ <apex:pageBlockSection Title="3. Enter New  Zscreen Build Component Batch" columns="3" collapsible="false">
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001796&ent=01I600000006UnQ&Name=si-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}">New Silicone Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001793&ent=01I600000006UnQ&Name=fmb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}" rendered="false">New Mirror Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001792&ent=01I600000006UnQ&Name=lnb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}" rendered="false">New Lens Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=0126000000017AI&ent=01I600000006UnQ&Name=ecb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}">New End Cap Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=01260000000179F&ent=01I600000006UnQ&Name=wgb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}" rendered="false">New WireGrid Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=012600000001794&ent=01I600000006UnQ&Name=cub-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}" rendered="false">New PBS Cube Batch</apex:outputLink>
+    <apex:outputLink value="/a03/e?retURL=%2Fhome%2Fhome.jsp&RecordType=0126000000017AN&ent=01I600000006UnQ&Name=lcb-&CF00N60000002FnLZ={!$User.FirstName}+{!$User.LastName}">New LC Cell Batch</apex:outputLink>
+  </apex:pageBlockSection>
+    <apex:pageBlockSection Title="4. Enter New  Engineering Prototype" columns="3" collapsible="false">  
+   <apex:outputLink value="/02i/e?retURL=%2Fhome%2Fhome.jsp&prd_id=01t600000045XtB&Name=Name&Account=RealD&CF00N60000001ronA=Engineering%20Prototypes&CF00N60000002FnLL={!$User.FirstName}+{!$User.LastName}">New Engineering Prototype</apex:outputLink>
+  </apex:pageBlockSection>                  
+</apex:pageBlock>  
+</apex:page>

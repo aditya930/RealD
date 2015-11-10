@@ -1,0 +1,18 @@
+<apex:page standardController="Asset"
+           sidebar="false" 
+           showheader="false"
+           standardStylesheets="false">
+<html>
+<head>
+</head>
+<body onload="moveTo(0,0); resizeTo(600,500); window.print()">
+<table align='left' border='0' width='300' padding='0'>
+<tr><td align='center' padding='0' style="font-size:200%">SN: {! Asset.SerialNumber}</td></tr> 
+<tr><td align='center' padding='0' style='font-size:150%'><img src="http://www.barcodesinc.com/generator/image.php?code={! Asset.SerialNumber}&style=68&type=C128B&width=200&height=50&xres=1&font=3" border="0" padding="0"></img>{!Asset.OwnerCode__c}</td></tr>
+<tr><td align='center' padding='0' style="font-size:200%">PN: {! Asset.Product2.ProductCode}</td></tr>
+<tr><td align='center' padding='0'><img src="http://www.barcodesinc.com/generator/image.php?code={! Asset.Product2.ProductCode}&style=68&type=C128B&width=200&height=50&xres=1&font=3" border="0" padding="0"></img></td></tr>
+</table>
+</body>
+</html>
+
+</apex:page>

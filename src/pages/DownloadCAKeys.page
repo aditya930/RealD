@@ -1,0 +1,85 @@
+<!-- Visualforce Page to download the License Keys related to
+a particular License Key request
+Created By: Suyati Technologies-->
+<apex:page controller="DownloadCAKeysController">
+        <head>
+            
+            <apex:includeScript value="/soap/ajax/34.0/connection.js"/>
+            <apex:includeScript value="/soap/ajax/34.0/apex.js"/>
+         
+            <apex:includeScript value="{!URLFOR($Resource.JQuery, '/jquery-1.8.2.min.js')}"/>
+         
+            <apex:includeScript value="{!URLFOR($Resource.JsZip, '/jszip.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.JsZip, '/jszip-load.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.JsZip, '/jszip-deflate.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.JsZip, '/jszip-inflate.js')}"/>
+            <apex:includeScript value="{!$Resource.FileSaverJs}"/>
+            <apex:includeScript value="{!$Resource.FileSaverMinJs}"/>
+
+            <style>
+                #loader {
+                    background: url("/img/loading32.gif") no-repeat scroll center center #FFF;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background-color:black;
+                    opacity: 0.20;
+                    filter: alpha(opacity = 20);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 9998;
+                }
+
+            </style>
+
+            <script type="text/javascript">
+                Visualforce.remoting.timeout = 120000;
+                var j$ = jQuery.noConflict();
+                var jsAtt;
+                var jsRequestId = '{!currentRecordId}';
+                var zipFile = new JSZip();
+                var jsDocumentObject;
+                
+                //Invokes apex method to get attachments
+                j$(document).ready(function() {
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.DownloadCAKeysController.getAttachments}',
+                        jsRequestId,
+                        function(result,event) {
+                            if(event.status){
+                                jsAtt = result;
+                                j$.each(jsAtt, function(key,value) {
+                                        compressFile(zipFile, value.attName, value.attEncodedBody);
+                                    });
+                                    downloadZip(zipFile);
+                                
+                            }
+                        });
+
+                    });
+
+                j$(window).load(function(){
+                    j$('#cover').fadeOut(15000);
+                    
+                });
+                
+                /*Function to compress the License Keys*/ 
+                function compressFile(zipFile, name, data) {
+                    zipFile.file(name, data, {base64:true});
+                }
+                    
+                /*Function to download the compressed License Keys*/
+                function downloadZip(zipFile) {
+                    sforce.connection.sessionId = '{!$Api.Session_ID}';
+                    var jsData = zipFile.generate({type:"blob"});
+                    var jsZipfileName = '{!zipFileName}';
+                    var fileName = jsZipfileName+'.zip';
+                    saveAs(jsData,fileName);
+                    window.location.href = '/'+ jsRequestId;
+                }
+
+            </script>
+        </head>
+        <div id="loader"></div>
+    </apex:page>

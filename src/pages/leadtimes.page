@@ -1,0 +1,25 @@
+<apex:page controller="LeadTimesCtl" cache="false" showHeader="false" sidebar="false" title="RealD Cinema Order Lead Times">
+  <div align="center">
+  <table border="0" align="center" width ="585" cellpadding="2">
+  <tr><td align="center"><img src="http://reald.com/Images/Master/reald_logo_blue.jpg" /></td></tr>
+  <tr><td align="center"><h1><font size="5"><B>RealD Product Lead Time Table</B></font></h1></td></tr>
+  <tr><td><table border="1" cellpadding="3" align="Center">
+  <tr>
+  <td><B>RealD Product</B></td><td><B>US Domestic (delivery times)</B></td><td><B>International Shipment (delivery times)</B></td>
+  </tr>
+  <apex:repeat value="{!LeadTimes}" var="lt">
+    <tr>
+      <td>{!lt.Name}</td><td>{!lt.US_Domestic_Delivery_Times__c}</td><td>{!lt.International_Delivery_Times__c}</td>
+    </tr>
+  </apex:repeat>
+  </table></td></tr>
+  <tr><td align="left"><font size="1">Last updated {!LastUpdated}</font></td></tr>
+  <tr><td><BR></BR></td></tr>
+  <tr><td align="left">Notes:</td></tr>
+  <tr><td align="left">*  All times reflect the delivery time after an order, applicable payments, and credit check have been completed.</td></tr>
+  <tr><td align="left">*  The published delivery times assume no shipping or customs delays.</td></tr>
+  <tr><td align="left">*  Lead times are published for guidance purposes only and are subject to change.</td></tr>
+  <tr><td align="left">*<B>  RealD offers an expedited shipping option, please consult your sales person for details.</B></td></tr>
+  </table>
+  </div>
+ </apex:page>

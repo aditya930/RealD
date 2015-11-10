@@ -1,0 +1,69 @@
+<apex:page controller="CurrentInventoryReportController" showheader="false" sideBar="false">
+<apex:pageBlock title="Cinema Systems" mode="maindetail">
+<apex:PageMessages />
+   <table class="list " id="j_id0:j_id1:j_id2" border="0" cellpadding="0" cellspacing="0" width="85%">
+        <colgroup span="3">
+        </colgroup>
+         <thead class="rich-table-thead">
+           <tr class="headerRow "> 
+             <th class="headerRow  " scope="col" colspan="1" ><div id="j_id3header:sortDiv">&nbsp;</div></th>
+             <th class="headerRow  " scope="col" colspan="{!Warehouses.Size + 1}" ><div id="j_id3header:sortDiv">Warehouse</div></th>
+            </tr>
+        </thead> 
+        <thead class="rich-table-thead">
+           <tr class="headerRow ">
+             <th class="headerRow  " scope="col" colspan="1" width="9%"><div id="j_id3header:sortDiv">Products</div></th>
+             <apex:repeat value="{!Warehouses}" var="w">
+                <th class="headerRow  " scope="col" colspan="1" ><div id="j_id3header:sortDiv">{!w.warehouse}</div></th>
+             </apex:repeat>
+             <th class="headerRow  " scope="col" colspan="1" ><div>Total</div></th>
+          </tr>
+        </thead>
+            
+	   <apex:Repeat value="{!CenimaInventory}" var="i">
+	     <tr class=" dataRow odd " onmouseover="if (window.hiOn){hiOn(this);} " onmouseout="if (window.hiOff){hiOff(this);} " onBlur="if (window.hiOff){hiOff(this);}" onFocus="if (window.hiOn){hiOn(this);}">
+	        <td class="headerRow  " colspan="1" style="white-space: nowrap">{!i.productName}</td>
+	        <apex:repeat value="{!i.quantities}" var="q">
+	            <td class="dataCell  " colspan="1" align="left" width="9%">{!q.quantity}</td>
+	        </apex:repeat>
+	        <td class="headerRow " colspan="1" style="white-space: nowrap" align="left">{!i.total}</td>
+	      </tr>
+	     
+	   </apex:Repeat>
+   </table>
+</apex:pageBlock>
+
+<apex:pageBlock title="Mounts" mode="maindetail">
+
+ <table class="list " border="0" cellpadding="0" cellspacing="0">
+        <colgroup span="3">
+        </colgroup>
+        <thead class="rich-table-thead">
+           <tr class="headerRow "> 
+             <th class="headerRow  " scope="col" colspan="1" ><div id="j_id3header:sortDiv">&nbsp;</div></th>
+             <th class="headerRow  " scope="col" colspan="{!Warehouses.Size + 1}" ><div id="j_id3header:sortDiv">Warehouse</div></th>
+            </tr>
+        </thead> 
+        <thead class="rich-table-thead">
+           <tr class="headerRow ">
+             <th class="headerRow  " scope="col" colspan="1" width="9%"><div id="j_id3header:sortDiv">Products</div></th>
+             <apex:repeat value="{!Warehouses}" var="w">
+                <th class="headerRow  " scope="col" colspan="1" ><div id="j_id3header:sortDiv">{!w.warehouse}</div></th>
+             </apex:repeat>
+             <th class="headerRow  " scope="col" colspan="1" align="left"><div>Total</div></th>
+          </tr>
+        </thead>
+            
+	   <apex:Repeat value="{!MountInventory}" var="i">
+	     <tr class=" dataRow odd " onmouseover="if (window.hiOn){hiOn(this);} " onmouseout="if (window.hiOff){hiOff(this);} " onBlur="if (window.hiOff){hiOff(this);}" onFocus="if (window.hiOn){hiOn(this);}">
+	        <td class="headerRow  " colspan="1" style="white-space: nowrap">{!i.productName}</td>
+	        <apex:repeat value="{!i.quantities}" var="q">
+	            <td class="dataCell  "  align="left" colspan="1" width="9%">{!q.quantity}</td>
+	        </apex:repeat>
+	        <td class="headerRow  "  colspan="1" align="left" style="white-space: nowrap">{!i.total}</td>
+	      </tr>
+	     
+	   </apex:Repeat>
+   </table>
+</apex:pageBlock>
+</apex:page>

@@ -1,0 +1,163 @@
+<apex:page StandardController="Shipment__c"
+    extensions="ShipmentEditController" standardStylesheets="true"
+    showHeader="true" cache="false">
+    <apex:sectionHeader title="{!$ObjectType.Shipment__c.label}"
+        subtitle="{!Shipment__c.name}" />
+    <apex:form Id="pageForm">
+<apex:pageMessages />
+        <apex:pageBlock title="Shipment Edit" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Shipment Information" columns="2"
+                collapsible="false">
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Shipment Type"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Shipment_Type__c}" />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.Fee_Structure__c}" />
+                <apex:inputField value="{! shipment.MAS_Reference__c}" />
+				<apex:outputField value="{! shipment.Status__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Circuit"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Circuit__c}"  />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:inputField value="{! shipment.RMA__c}" />
+                <apex:inputField value="{! shipment.Billing_Entity__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                
+                
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Theater"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Theatre__c}" >
+                            <apex:actionSupport event="onchange" action="{!updateAddress}"
+                                status="{!$Component.deliveryInfo.statusField.StatusChange}"
+                                rerender="{!$Component.deliveryInfo}" />
+                        </apex:inputField>
+                     </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Delivery Information" columns="2"
+                collapsible="false" id="deliveryInfo">
+
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Ship To"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.ShipTo__c}">
+                    <apex:actionSupport event="onchange" action="{!updateAddress}"
+                        status="StatusChange" rerender="deliveryInfo" />
+                        </apex:inputField>
+                     </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Ship To Name"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:inputField value="{! shipment.ShipToName__c}" />
+                     </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:inputField value="{! shipment.Destination_Warehouse__c}">
+                    <apex:actionSupport event="onblur" action="{!updateAddress}"
+                        status="StatusChange" rerender="deliveryInfo" />
+                </apex:inputField>
+
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Shipping Street 1"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.ShippingStreet1__c}" />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:pageBlockSectionItem id="statusField">
+                    <apex:actionStatus startText="Updating page ..." id="StatusChange" />
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.ShippingStreet2__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.ShippingStreet3__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.ShippingStreet4__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Shipping City"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Shipping_City__c}" />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.Shipping_State_Province__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField value="{! shipment.Shipping_Postal_Code__c}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Shipping Country"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Shipping_Country__c}" />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Billing" columns="2">
+                <apex:repeat value="{!$ObjectType.Shipment__c.FieldSets.X3rd_Party_Billing}"
+                    var="f">
+                    <apex:inputField value="{!shipment[f]}" />
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact" columns="2"
+                collapsible="false">
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Contact"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Contact__c}"  />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                    <apex:inputfield value="{! shipment.UseTheatrePhone__c}" />    
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Shipment Details" columns="2">
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Carrier"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Carrier__c}"  />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Scheduled Ship Date"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Scheduled_Ship_Date__c}"  />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="Shipping Service Type"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:inputField value="{! shipment.Shipping_Service_Type__c}"  />
+                    </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                <apex:inputField value="{! shipment.Delivery_Due_Date__c}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Comments" columns="1">
+                <apex:inputField value="{! shipment.Comments__c}" style="width:85%"/>
+                <apex:inputField value="{! shipment.Internal_Comments__c}" style="width:85%"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

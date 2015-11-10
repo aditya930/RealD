@@ -1,0 +1,8 @@
+<apex:page standardcontroller="Asset" 
+           extensions="AssetRecordCreationButrtonCtl" 
+           action="{!createAssetTransfer}"
+           cache="false">
+<apex:pageMessages />
+
+
+</apex:page>

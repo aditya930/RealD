@@ -1,0 +1,253 @@
+<apex:page showHeader="false" sidebar="false" standardController="TIF__c" extensions="TheaterInfoFormController" tabStyle="TIF__c">
+<apex:composition template="{!$Site.Template}">
+  <apex:define name="body">
+
+<style>
+.mainTitle
+{
+  font-size: 20px;
+}
+</style>  
+  
+<div style="width: 75%; margin: 30px auto;">  
+  <apex:messages title="Errors" style="color: #f00;"/>
+  <apex:outputPanel rendered="false">{!userLicense}</apex:outputPanel> 
+  <apex:outputPanel rendered="false">{!tif.Form_Status__c}</apex:outputPanel>
+  <apex:form >
+  
+  <apex:pageBlock title="RealD Cinema Order Form" >
+    <apex:pageBlockSection columns="1">
+      <apex:outputPanel >
+           <h1 class="mainTitle">
+             Please fill in this form completely to begin your request for a RealD Cinema System.  
+             This information will allow RealD to help select the proper product for your theatre.
+           </h1>
+           <div style="text-align: right;">
+           * Required Fields for submission
+           </div>
+      </apex:outputPanel>
+    </apex:pageBlockSection>
+  </apex:pageBlock>  
+  <apex:pageBlock title="Theatre and Contact Information">    
+    <apex:pageBlockSection showHeader="true" >
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Exhibitor_Owner__c" title="Exhibitor/Owner">*Exhibitor/Owner:</apex:outputLabel>
+        <apex:inputField id="Exhibitor_Owner__c"  value="{!tif.Exhibitor_Owner__c}"/>
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Contact_Name__c" title="Contact Name">*Contact Name:</apex:outputLabel>
+        <apex:inputField id="Contact_Name__c"  value="{!tif.Contact_Name__c}"/>
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Theatre_Name__c" title="Theatre Name">*Theatre Name:</apex:outputLabel>
+        <apex:inputField id="Theatre_Name__c"  value="{!tif.Theatre_Name__c}"/>
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Phone__c" title="Phone">*Phone:</apex:outputLabel>
+        <apex:inputField id="Phone__c"  value="{!tif.Phone__c}"/>
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Auditorium_Number__c" title="Auditorium Number">Auditorium Number:</apex:outputLabel>
+        <apex:inputField id="Auditorium_Number__c"  value="{!tif.Auditorium_Number__c}"/>
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Theater_Email__c" title="Theatre Email">*Theatre Email:</apex:outputLabel>
+        <apex:inputField id="Theater_Email__c"  value="{!tif.Theater_Email__c}"/>
+      </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Number_of_Seats__c" title="Number of Seats">*Number of Seats</apex:outputLabel>
+        <apex:inputField id="Number_of_Seats__c"  value="{!tif.Number_of_Seats__c}"/>
+      </apex:pageBlockSectionItem>
+  
+
+      <apex:pageBlockSectionItem rendered="false">
+        <apex:outputLabel for="Fax__c" title="Fax">Fax:</apex:outputLabel>
+        <apex:inputField id="Fax__c"  value="{!tif.Fax__c}"/>
+      </apex:pageBlockSectionItem>
+          
+    </apex:pageBlockSection>
+  </apex:pageBlock>  
+  <apex:pageBlock title="Address Information">
+    <apex:actionRegion id="AddressRegion" >     
+        <apex:pageBlockSection id="addresses" columns="3">
+            <apex:pageBlockSection columns="1" >
+              <apex:facet name="header">Location</apex:facet>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Billing_Street_1__c" title="Address line 1">*Address:</apex:outputLabel>
+                    <apex:inputField id="Billing_Street_1__c"  value="{!tif.Billing_Street_1__c}" />      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Billing_City__c" title="City">*City:</apex:outputLabel>
+                    <apex:inputField id="Billing_City__c"  value="{!tif.Billing_City__c}"/>      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Billing_State_Province__c" title="State/Province">*State/Province:</apex:outputLabel>
+                    <apex:inputField id="Billing_State_Province__c"  value="{!tif.Billing_State_Province__c}"/>      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Billing_Zip_Postal_Code__c" title="ZIP/Postal Code">*ZIP/Postal Code:</apex:outputLabel>
+                    <apex:inputField id="Billing_Zip_Postal_Code__c"  value="{!tif.Billing_Zip_Postal_Code__c}"/>      
+                </apex:pageBlockSectionItem>    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Billing_Country__c" title="Country">*Country:</apex:outputLabel>
+                    <apex:inputField id="Billing_Country__c"  value="{!tif.Billing_Country__c}"/>      
+                </apex:pageBlockSectionItem>                            
+            </apex:pageBlockSection>   
+            <apex:pageBlockSection columns="1" >
+                <br/><br/>
+                <apex:commandButton value="Copy To Shipping" immediate="false" reRender="addresses" action="{!copyBillingToShipping}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" >
+              <apex:facet name="header">Shipping</apex:facet>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Shipping_Street_1__c" title="Address line 1">*Address:</apex:outputLabel>
+                    <apex:inputField id="Shipping_Street_1__c"  value="{!tif.Shipping_Street_1__c}"/>      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Shipping_City__c" title="City">*City:</apex:outputLabel>
+                    <apex:inputField id="Shipping_City__c"  value="{!tif.Shipping_City__c}"/>      
+                </apex:pageBlockSectionItem>  
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Shipping_State_Province__c" title="State/Province">*State/Province:</apex:outputLabel>
+                    <apex:inputField id="Shipping_State_Province__c"  value="{!tif.Shipping_State_Province__c}"/>      
+               </apex:pageBlockSectionItem>     
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Shipping_Zip_Postal_Code__c" title="ZIP/Postal Code">*ZIP/Postal Code:</apex:outputLabel>
+                    <apex:inputField id="Shipping_Zip_Postal_Code__c"  value="{!tif.Shipping_Zip_Postal_Code__c}"/>      
+               </apex:pageBlockSectionItem>     
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Shipping_Country__c" title="Country">*Country:</apex:outputLabel>
+                    <apex:inputField id="Shipping_Country__c"  value="{!tif.Shipping_Country__c}"/>      
+               </apex:pageBlockSectionItem>                             
+            </apex:pageBlockSection>
+
+        </apex:pageBlockSection>
+    
+    </apex:actionRegion>   
+  </apex:pageBlock>  
+  <apex:pageBlock rendered="false">     
+    <apex:pageBlockSection title="Silver Screen" rendered="false">
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Silver_Screen_Manufacturer__c" title="Manufacturer">Manufacturer:</apex:outputLabel>
+        <apex:inputField id="Silver_Screen_Manufacturer__c"  value="{!tif.Silver_Screen_Manufacturer__c}"/>      
+      </apex:pageBlockSectionItem>  
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Silver_Screen_Install_Date__c" title="Install Date">Install Date:</apex:outputLabel>
+        <apex:inputField id="Silver_Screen_Install_Date__c"  value="{!tif.Silver_Screen_Install_Date__c}"/>      
+      </apex:pageBlockSectionItem>          
+    </apex:pageBlockSection>
+  </apex:pageBlock>  
+  <apex:pageBlock rendered="false">
+    <apex:pageBlockSection title="Digital Cinema Equipment" rendered="false">
+      <apex:pageBlockSectionItem rendered="false">
+        <apex:outputLabel for="DC_Equipment_Installer__c" title="Installer">Installer:</apex:outputLabel>
+        <apex:inputField id="DC_Equipment_Installer__c"  value="{!tif.DC_Equipment_Installer__c}"/>      
+      </apex:pageBlockSectionItem>    
+      <apex:pageBlockSectionItem rendered="false">
+        <apex:outputLabel for="DC_Equipment_Install_Date__c" title="Install Date">Install Date:</apex:outputLabel>
+        <apex:inputField id="DC_Equipment_Install_Date__c"  value="{!tif.DC_Equipment_Install_Date__c}"/>      
+      </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem rendered="false">
+        <apex:outputLabel for="DC_Service_Provider__c" title="Service Provider">Service Provider:</apex:outputLabel>
+        <apex:inputField id="DC_Service_Provider__c"  value="{!tif.DC_Service_Provider__c}"/>      
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem rendered="false" >
+        <apex:outputLabel for="Digital_Projector_Serial_Number__c" title="Serial Number">Serial Number:</apex:outputLabel>
+        <!-- apex:inputField id="Digital_Projector_Serial_Number__c"  value="{!tif.Digital_Projector_Serial_Number__c}"/ -->      
+      </apex:pageBlockSectionItem>      
+      <apex:pageBlockSectionItem rendered="false">
+        <apex:outputLabel for="Digital_Server_Make_and_Model__c" title="Server Make &amp; Model">Server Make &amp; Model:</apex:outputLabel>
+        <apex:inputField id="Digital_Server_Make_and_Model__c"  value="{!tif.Digital_Server_Make_and_Model__c}"/>      
+      </apex:pageBlockSectionItem>                
+    </apex:pageBlockSection>
+
+  </apex:pageBlock>  
+  <apex:pageBlock title="System Selection">    
+	<apex:pageBlockSection columns="1">
+		<apex:pageBlockSectionItem >
+      		If known, select your desired system below.  For assistance in selecting a system, please complete all fields in the "Screen and Projection Information" Section below
+    	</apex:pageBlockSectionItem>
+	</apex:pageBlockSection>
+	
+    <apex:actionRegion >
+        <apex:pageBlockSection id="productSection"  >
+        
+          <apex:pageBlockSectionItem >
+            <apex:outputLabel for="Product__c" title="Desired product">Desired Product:</apex:outputLabel>
+            <apex:inputField id="Product__c"  value="{!tif.Product__c}"> 
+              <apex:actionSupport event="onchange" reRender="ScreenInformationSectionContainer,PortWindowSectionContainer" immediate="false" action="{!checkProduct}"/>
+            </apex:inputField>
+          </apex:pageBlockSectionItem>
+          
+          <apex:pageBlockSectionItem >
+            <apex:outputLabel for="Request_Date__c" title="Estimated Installation Date">*Estimated Installation Date:</apex:outputLabel>
+            <apex:inputField id="Request_Date__c"  value="{!tif.Request_Date__c}" /> 
+          </apex:pageBlockSectionItem>          
+        </apex:pageBlockSection>  
+     
+    </apex:actionRegion>    
+  </apex:pageBlock>  
+  
+  <apex:pageBlock title="Screen and Projection Information">     
+    <apex:pageBlockSection id="ScreenAndProjectionInfo" >
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Digital_Projector_Make_Model__c" title="Projector Make &amp; Model">*Projector Make &amp; Model:</apex:outputLabel>
+        <apex:inputField id="Digital_Projector_Make_Model__c"  value="{!tif.Digital_Projector_Make_Model__c}"/>      
+      </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="UoM__c" title="Screen Units of Measure">Unit of Measure: </apex:outputLabel>
+        <apex:inputField id="UoM__c"  value="{!tif.UoM__c}"/>      
+      </apex:pageBlockSectionItem>      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Is_Port_Window_Sized_Right__c" title="Port window size verification">Port window is at least 24 inches (61cm) wide by 24 inches (61cm) tall and top of window is at least 10 inches (25.4 cm) above centerline of lens:</apex:outputLabel>
+        <apex:inputField id="Is_Port_Window_Sized_Right__c"  value="{!tif.Is_Port_Window_Sized_Right__c}"/>      
+      </apex:pageBlockSectionItem>              
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Flat_1_85_Picture_Width__c" title="Flat (1.85) Picture Width">Flat (1.85) Picture Width:</apex:outputLabel>
+        <apex:inputField id="Flat_1_85_Picture_Width__c"  value="{!tif.Flat_1_85_Picture_Width__c}"/>  
+      </apex:pageBlockSectionItem>    
+                
+      <apex:pageBlockSectionItem >   </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Projection_Throw_Distance__c" title="Projection Throw Distance">Projection Throw Distance:</apex:outputLabel>
+        <apex:inputField id="Projection_Throw_Distance__c"  value="{!tif.Projection_Throw_Distance__c}"/>      
+      </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >   </apex:pageBlockSectionItem>
+      
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel for="Scope_2_39_Picture_Width__c" title="Scope (2.39) Picture Width">Scope (2.39) Picture Width:</apex:outputLabel>
+        <apex:inputField id="Scope_2_39_Picture_Width__c"  value="{!tif.Scope_2_39_Picture_Width__c}"/>      
+      </apex:pageBlockSectionItem> 
+    </apex:pageBlockSection>
+  </apex:pageBlock>  
+  
+  <apex:pageBlock title="Comments">     
+    <apex:pageBlockSection >
+      <apex:pageBlockSectionItem >
+        <apex:inputField id="Comments__c" value="{!tif.Comments__c}" style="width: 500px;"/>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+  </apex:pageBlock>  
+  
+  <apex:pageBlock >    
+    <apex:pageBlockSection >
+
+      <apex:pageBlockSectionItem rendered="{!loggedInStatus}">
+        <apex:outputlabel >To save your form to be completed later, click Save.  </apex:outputlabel>      
+        <apex:commandButton title="save" value="Save" action="{!save}"  />
+      </apex:pageblockSectionItem>
+      
+      <apex:pageblockSectionItem >
+        <apex:outputLabel rendered="{!loggedInStatus}">To submit your completed form for RealD to begin processing, click Submit.</apex:outputLabel>        
+        <apex:commandButton title="save" value="Submit" action="{!saveAndSubmit}" />
+      </apex:pageBlockSectionItem>      
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</div>
+  </apex:define>
+</apex:composition>
+</apex:page>

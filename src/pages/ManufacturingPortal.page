@@ -1,0 +1,20 @@
+<apex:page showHeader="false" sidebar="false" title="RealD Manufacturing Portal">
+  <Table align="Center" width="150">
+  
+  <TR><TD align="center" colspan="2"><apex:image url="http://reald.com/Images/Master/reald_logo_blue.jpg"/></TD></TR>
+  <TR><TD align="center" colspan="2"><H1>Click Here to Log In to the RealD Manufacturing Portal</H1></TD></TR>
+  <TR height="10"><TD></TD></TR>
+  <TR>
+  	<TD align="center" width="75" border="0">
+  		<apex:outputLink value="https://login.salesforce.com/secur/login_portal.jsp?orgId={!$Organization.Id}&portalId=060600000000SfM">
+  			<apex:image url="{!URLFOR($Resource.GraphicsPack, '32/fatcow/farmfresh/lock.png')}"/>
+  			<br><H1>Standard Login</H1></br>
+  		</apex:outputLink></TD>
+  	<TD align="center" width="75" border="0">
+  	  		<apex:outputLink value="https://sso.connect.pingidentity.com/sso/sp/initsso?saasid=14868516-1861-41f9-9649-75022cb70e5d&idpid=84e15aec-b49c-4b4f-b412-4eaa6073bbed">
+  			<apex:image url="{!URLFOR($Resource.GraphicsPack, '32/fatcow/farmfresh/key.png')}"/>
+  			<br><H1>One-Click Login</H1></br>
+  		</apex:outputLink></TD>
+  </TR>
+   </Table>
+</apex:page>

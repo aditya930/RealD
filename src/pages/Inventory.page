@@ -1,0 +1,11 @@
+<apex:page name="Inventory" label="Inventory" Title="Inventory Home" Sidebar="False">
+<H2> *Inventory Tools are currently in Beta. Please report any issues to <a href="mailto:enelson@reald.com?subject=Salesforce%20Inventory%20Issue%20">enelson@reald.com</a> </H2>
+   <apex:tabPanel switchType="client" selectedTab="Inventory" id="theTabPanel" headerSpacing="2">
+      <apex:tab label="Current Inventory" name="current" id="tab1">
+         <apex:include pageName="CurrentInventoryReport" />
+      </apex:tab>
+      <apex:tab label="Projected Inventory" name="projected" id="tab2" Rendered="True">
+         <apex:include pageName="ProjectedInventory" />
+      </apex:tab>
+   </apex:tabPanel>
+</apex:page>

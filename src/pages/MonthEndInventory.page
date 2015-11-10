@@ -1,0 +1,6 @@
+<apex:page controller="CurrentInventoryReportController" showheader="false" sideBar="false">
+    <apex:form >
+        <p align="center"><apex:commandButton value="Reconcile Month End Inventory" action="{!cloneCurrentInventory}"/></p>
+    </apex:form>
+        <apex:include pageName="CurrentInventoryReport" /> 
+</apex:page>

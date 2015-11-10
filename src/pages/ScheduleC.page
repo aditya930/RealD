@@ -1,0 +1,102 @@
+<apex:page controller="ScheduleCController"  RenderAs="PDF" ContentType="application/pdf" showHeader="false" >
+<head>
+  <style>
+    @page {
+      size:landscape;
+      margin-top: 0.65in;
+      margin-bottom: 0.5in;
+      margin-left: 0.5in;
+      margin-right: 0.5in;
+ 
+  @bottom-center{
+    content: "-{!Circuit.Schedule_Name__c}-";
+  }
+  @bottom-right {
+    content: "Page " counter(page)" of " counter(pages);
+  }
+    }
+  </style> 
+</head>
+    <apex:OutputText >
+       <P align="center"><B><U>{!Circuit.Schedule_Name__c}</U></B></P>
+       <P align="center">EQUIPMENT SCHEDULE</P>
+   </apex:OutputText>    
+       <apex:outputText Rendered="{!Circuit.New_Agreement_Format__c != True}">
+       <P align="center">Equipment Schedule dated as of <apex:outputText value="{0,date,' 'MMMM' 'dd', 'yyyy}"><apex:param value="{!Circuit.Date_of_Schedule__c}" /></apex:outputText> to
+       <BR>The {!Circuit.Schedule_Type__c},</BR>
+       <BR>between {!Circuit.RealD_Entity__c} and {!Circuit.Licensee__c} dated as of <apex:outputText value="{0,date,' 'MMMM' 'dd', 'yyyy}"><apex:param value="{!Circuit.Effective_Date_of_Agreement__c}" /></apex:outputText> (the "Agreement")</BR></P>
+       </apex:outputText>
+       <apex:repeat value="{!ScheduleLinesForPrinting}" var="p">
+  <div style="page-break-after:always;">        
+           <apex:dataTable value="{!p.assets}"
+                           var="asset"
+                           cellPadding="5" border="1" align="Center">
+              <apex:column width="200">
+              <Apex:facet name="header">Location (name and address)</Apex:facet>
+               {!asset.account.Schedule_C_Name_Location__c}
+              </apex:column>
+              <apex:column width="25" >
+              <Apex:facet name="header">Aud.#</Apex:facet>
+              {!asset.Screen__r.Auditorium_Number__c}
+              </apex:column>
+              <apex:column width="70" >
+              <Apex:facet name="header">Equipment Installed</Apex:facet>
+              {!asset.Product_Name__c}
+              </apex:column>          
+              <apex:column width="60" >
+              <Apex:facet name="header">Serial Number</Apex:facet>
+              {!asset.SerialNumber}
+              </apex:column>
+              <apex:column width="75" >
+              <Apex:facet name="header">Installation Date</Apex:facet>
+              <apex:outputText value="{0,date,' 'MM'/'dd'/'yyyy}"><apex:param value="{!asset.InstallDate}" /></apex:outputText>
+              </apex:column>          
+              <apex:column width="75" >
+              <Apex:facet name="header">Initial Term End Date</Apex:facet>
+              <apex:outputText value="{0,date,' 'MM'/'dd'/'yyyy}"><apex:param value="{!asset.UsageEndDate}" /></apex:outputText>
+              </apex:column>          
+              <apex:column width="65" >
+              <Apex:facet name="header">Renewal Term End Date</Apex:facet>
+              <apex:outputText value="{0,date,' 'MM'/'dd'/'yyyy}"><apex:param value="{!asset.Renewal_Term_End_Date__c}" /></apex:outputText>
+              </apex:column>          
+              <apex:column width="70" >
+              <Apex:facet name="header">Termination Date</Apex:facet>
+              <apex:outputText value="{0,date,' 'MM'/'dd'/'yyyy}"><apex:param value="{!Circuit.Termination_Date__c}" /></apex:outputText>    
+              </apex:column>          
+           </apex:dataTable>
+
+ </div>        
+         </apex:repeat>
+
+
+       
+        <apex:pageBlock Rendered="{!Circuit.New_Agreement_Format__c != True}">
+           <apex:outputText >
+           This Equipment Schedule is executed pursuant to the Agreement.  All of the terms and conditions of the Agreement 
+           are incorporated herein by reference and made a part hereof as if such terms and conditions were set forth in full in this 
+           Equipment Schedule.  This Equipment Schedule replaces any previous Equipment Schedule executed by the parties.  The parties may 
+           add addtional Equipment, Auditorium(s), and Location(s) to this Equipment Schedule by adding the applicable information hereto and 
+           executing such updated Equipment Schedule as of the applicable Installation Date(s).  By executing this Equipment Schedule, 
+           Licensee and RealD hereby reaffirm all of the terms, conditions, representations and warranties of the Agreement except as 
+           supplemented hereby.
+           </apex:outputText>
+        </apex:pageBlock>
+           <p></p>
+          <apex:panelGrid columns="3" id="Signatures" cellpadding="10" Rendered="{!Circuit.New_Agreement_Format__c != True}">
+            <apex:outputText value="{!Circuit.RealD_Entity__c}"/>
+            <apex:outputText value="      "/>
+            <apex:outputText value="{!Circuit.Licensee__c}"/>
+            <apex:outputText value="By:  _______________________"/>
+            <apex:outputText value=""/>
+            <apex:outputText value="By:  ______________________"/>
+            <apex:outputText value="Name:  {!Circuit.Signer__c}"/>
+            <apex:outputText value=""/>
+            <apex:outputText value="Name:  ____________________"/>
+            <apex:outputText value="Title: {!Circuit.Signer_Title__c}"/>
+            <apex:outputText value=""/>
+            <apex:outputText value="Title:  _____________________"/>
+            <apex:outputText value="Date:  _____________________"/>
+            <apex:outputText value=""/>
+            <apex:outputText value="Date:  _____________________"/>
+        </apex:panelGrid>
+</apex:page>

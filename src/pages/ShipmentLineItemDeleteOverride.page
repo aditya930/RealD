@@ -1,0 +1,3 @@
+<apex:page StandardController="Shipment_Line_Item__c" extensions="ShipmentLineItemDeleteOverride" Action="{!deleteShipmentLineItem}">
+<Apex:PageMessages /> 
+</apex:page>

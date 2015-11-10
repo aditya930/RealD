@@ -1,0 +1,1024 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"check",
+				"checkCheckboxRetainAssetFlag"
+			],
+			[
+				"retain",
+				"retainAssetArrFlag"
+			],
+			[
+				"ship",
+				"shippingAssetArr"
+			],
+			[
+				"chec",
+				"checkCheckboxRetainAssetFlag"
+			],
+			[
+				"js",
+				"jsAtt"
+			],
+			[
+				"ret",
+				"retainAssetArrFlag"
+			],
+			[
+				"chekc",
+				"checkCheckboxShipAsset"
+			],
+			[
+				"de",
+				"deleteAssetArr"
+			],
+			[
+				"asset",
+				"assetID"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"tbl",
+				"tblShippingAssets"
+			],
+			[
+				"tb",
+				"tblInstalledAssets"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"sele",
+				"selectAllInstalledAssets"
+			],
+			[
+				"all",
+				"allShippingAssets"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"page",
+				"pagerefKeyRequest"
+			],
+			[
+				"pager",
+				"pagerefKeyRequest"
+			],
+			[
+				"key",
+				"keyRequestID"
+			],
+			[
+				"hidde",
+				"hiddenEndDate"
+			],
+			[
+				"hidd",
+				"hiddenBeginDate"
+			],
+			[
+				"marig",
+				"margin-top"
+			],
+			[
+				"ass",
+				"assetID"
+			],
+			[
+				"as",
+				"assetID"
+			],
+			[
+				"lk",
+				"lkids"
+			],
+			[
+				"test",
+				"testMethod"
+			],
+			[
+				"checkda",
+				"checkDateStatus"
+			],
+			[
+				"rane",
+				"rangeTo"
+			],
+			[
+				"parse",
+				"parseJSON"
+			],
+			[
+				"respo",
+				"response"
+			],
+			[
+				"doc",
+				"docId"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"req",
+				"reqID"
+			],
+			[
+				"st",
+				"static"
+			],
+			[
+				"set",
+				"setRedirect"
+			],
+			[
+				"red",
+				"redirPageRef"
+			],
+			[
+				"fie",
+				"fileName"
+			],
+			[
+				"new",
+				"newDoc"
+			],
+			[
+				"lstAtt",
+				"lstAttachmentWrapper"
+			],
+			[
+				"json",
+				"jsonDataNewAssets"
+			],
+			[
+				"reTa",
+				"retainBeginDate"
+			],
+			[
+				"ran",
+				"rangeTo"
+			],
+			[
+				"range",
+				"rangeFrom"
+			],
+			[
+				"Lic",
+				"License_End_Date__c"
+			],
+			[
+				"Lice",
+				"License_Begin_Date__c"
+			],
+			[
+				"Asset",
+				"Asset__c"
+			],
+			[
+				"fetc",
+				"fetchAssetArr"
+			],
+			[
+				"ch",
+				"checkCheckboxRetainAsset"
+			],
+			[
+				"insert",
+				"insertList"
+			],
+			[
+				"cooi",
+				"cookieAssetArr"
+			],
+			[
+				"cook",
+				"cookieAssetArr"
+			],
+			[
+				"testa",
+				"testAccount"
+			],
+			[
+				"New",
+				"NewCAKeyRequestController"
+			],
+			[
+				"testkey",
+				"testKeyRequestAsset"
+			],
+			[
+				"pagere",
+				"pageref"
+			],
+			[
+				"re",
+				"recordID"
+			],
+			[
+				"lice",
+				"licenseEndDate"
+			],
+			[
+				"Key",
+				"KeyStatus__c"
+			],
+			[
+				"data",
+				"dataRowInstalledAssets"
+			],
+			[
+				"query",
+				"queryInstalledAssets"
+			],
+			[
+				"shi",
+				"shipmentName"
+			],
+			[
+				"scr",
+				"screenID"
+			],
+			[
+				"scre",
+				"screenName"
+			],
+			[
+				"the",
+				"theatreID"
+			],
+			[
+				"att",
+				"attEncodedBody"
+			],
+			[
+				"res",
+				"responseMessage"
+			],
+			[
+				"response",
+				"responseMessage"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"Re",
+				"RemoteAction"
+			],
+			[
+				"sf",
+				"sfUsersInviteController"
+			],
+			[
+				"usrs",
+				"usersToUpdate"
+			],
+			[
+				"rec",
+				"recordIdList"
+			],
+			[
+				"record",
+				"recordIdList"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"acc",
+				"accsToken"
+			],
+			[
+				"linked",
+				"linkedinPopupStatus"
+			],
+			[
+				"fbPo",
+				"fbPopupStatus"
+			],
+			[
+				"l",
+				"linkedinPostStatus"
+			],
+			[
+				"link",
+				"linkedinPopupStatus"
+			],
+			[
+				"posted",
+				"postedMessage"
+			],
+			[
+				"disable",
+				"disableLink123"
+			],
+			[
+				"pop",
+				"popupPosition"
+			],
+			[
+				"time",
+				"timeArr"
+			],
+			[
+				"sche",
+				"scheduledTime"
+			],
+			[
+				"Sch",
+				"ScheduleStatus"
+			],
+			[
+				"linkedin",
+				"linkedinBlurb"
+			],
+			[
+				"twi",
+				"twitterBlurb"
+			],
+			[
+				"wrapper",
+				"wrapper1"
+			],
+			[
+				"ls",
+				"lstMediaStatus"
+			],
+			[
+				"social",
+				"socialMediaStatus"
+			],
+			[
+				"soc",
+				"socialMedia1"
+			],
+			[
+				"socia",
+				"socialMeadiaPost"
+			],
+			[
+				"Page",
+				"PageReference"
+			],
+			[
+				"Pga",
+				"PageReference"
+			],
+			[
+				"stat",
+				"statusCode"
+			],
+			[
+				"api",
+				"apiURL"
+			],
+			[
+				"b",
+				"bController"
+			],
+			[
+				"se",
+				"setBody"
+			],
+			[
+				"Test",
+				"TestCallouts"
+			],
+			[
+				"is",
+				"isRunningTest"
+			],
+			[
+				"sty",
+				"style	Tag"
+			],
+			[
+				"Http",
+				"HttpResponse"
+			],
+			[
+				"auth",
+				"authController"
+			],
+			[
+				"aur",
+				"authController"
+			],
+			[
+				"cl",
+				"class"
+			],
+			[
+				"style",
+				"styleClass"
+			],
+			[
+				"rnage",
+				"rangeFrom"
+			],
+			[
+				"dta",
+				"dateFilterQuery"
+			],
+			[
+				"L",
+				"LineItemWrapper"
+			],
+			[
+				"tra",
+				"trackingNumber"
+			],
+			[
+				"Sh",
+				"ShipmentSearchController"
+			],
+			[
+				"in",
+				"INSERT"
+			],
+			[
+				"sle",
+				"selectAllCheckbox"
+			],
+			[
+				"che",
+				"checkCount"
+			],
+			[
+				"s",
+				"selectall"
+			],
+			[
+				"Excep",
+				"NullPointerException	[Standard Apex Class]"
+			],
+			[
+				"err",
+				"error_description"
+			],
+			[
+				"logi",
+				"loginError"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
+				"onc",
+				"onclick	Attr"
+			],
+			[
+				"ap",
+				"apex"
+			],
+			[
+				"rese",
+				"resetButton"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"class",
+				"classname"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"to",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"git",
+				"Git (SideBarGit): Push"
+			],
+			[
+				"lo",
+				"Convert Case: Lower Case"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 664.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Projects/Sublime/RealD Phase3",
+		"/E/Projects/Sublime/RealD Phase3/src"
+	],
+	"file_history":
+	[
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/C/Users/amohandasan/Desktop/sample.html",
+		"/E/Projects/RealD/Phase 2/Code/DownloadCAKey_old.html",
+		"/E/Projects/RealD/Phase 2/Code/DownloadCAKeyController_old.java",
+		"/E/Projects/RealD/Phase 2/Code/anony.txt",
+		"/C/Users/amohandasan/Downloads/linkOpportunityToCampaign.cls",
+		"/C/Users/amohandasan/Downloads/linkOpportunityToCampaign_Mike.cls",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/SublimeGit/SublimeGit.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Installed Packages/TortoiseSVN.sublime-package",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/User/TortoiseSVN.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/User/Git.sublime-settings",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/Git/Git.sublime-settings",
+		"/E/Projects/RealD/Phase 2/Code/newCAKeyRequestPage.html",
+		"/E/Projects/RealD/Phase 2/Code/newCAKeyRequestController.java",
+		"/E/Projects/RealD/Phase 2/Code/ShipmentCompletionPage.html",
+		"/E/Projects/RealD/Phase 2/Code/ShipmentCompletionController.java",
+		"/E/Projects/Sublime/RealD II Project/src/pages/DownloadCAKeys.page",
+		"/E/Projects/RealD/Phase 2/Code/DownloadCAKey.html",
+		"/E/Projects/RealD/Phase 2/Code/CAKeyRequestJS.js",
+		"/E/Projects/RealD/Phase 2/Code/page backup",
+		"/E/Projects/RealD/Phase 2/Code/controller class backup",
+		"/C/Users/amohandasan/AppData/Roaming/Skype/My Skype Received Files/to-adithya.master",
+		"/C/Users/amohandasan/AppData/Roaming/Sublime Text 3/Packages/MavensMate/messages/5.0.0.txt",
+		"/C/Users/amohandasan/Desktop/database-suyati-com-1442228475.sql",
+		"/C/Users/amohandasan/Desktop/current working SoCXO/blurbpage_backup_001.html",
+		"/C/Users/amohandasan/Desktop/current working SoCXO/BlurbController_backup.java",
+		"/E/Projects/RealD/Phase 1/Old Code/ShipmentCompletion.html",
+		"/C/Users/amohandasan/AppData/Roaming/Skype/My Skype Received Files/isayso.isaysoConfigurationController.java",
+		"/C/Users/amohandasan/Desktop/blurb-sales.html",
+		"/E/Projects/RealD/New Code/vf page.html",
+		"/C/Users/amohandasan/Desktop/current working SoCXO/blurbpage.html",
+		"/C/Users/amohandasan/Desktop/sfSocxo.html",
+		"/C/Users/amohandasan/Desktop/Library-WebRTC-Timer-master/README.md",
+		"/C/Users/amohandasan/Desktop/Library-WebRTC-SIPStack-master/README.md",
+		"/C/Users/amohandasan/Desktop/Library-ExSIP-master/README",
+		"/C/Users/amohandasan/Desktop/Library-WebRTC-DialPad-master/README.md",
+		"/C/Users/amohandasan/Desktop/Library-WebRTC-DialPad-master/Makefile",
+		"/E/Projects/Sublime/SoCXO/src/pages/paneltest.page",
+		"/E/Projects/Sublime/SoCXO/src/classes/AuthControllerforproductrefined.cls",
+		"/E/Projects/Sublime/SoCXO/src/pages/SOCXOmainPage.page",
+		"/E/Projects/Sublime/DeveloperSoCXO/src/pages/SOCXOmainPage.page",
+		"/E/Projects/RealD/New Code/apex class.java",
+		"/E/Projects/RealD/New Code/ShipmentCompletionControllerTest1.java",
+		"/E/Projects/RealD/Code Backup/Apex.java",
+		"/C/Users/amohandasan/Desktop/reald backup code/reald backup code/controllerclass.java",
+		"/E/Projects/RealD/Code Backup/VF.html",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/AuthControllerforproduct.cls",
+		"/E/Projects/RealD/Code/ShipmentSearchController_test",
+		"/E/Projects/RealD/Code/ShipmentSearchpage_test",
+		"/E/Projects/RealD/Code/CallResultSettings.java",
+		"/E/Projects/RealD/Code/ShipmentSearchpage_first_edit.html",
+		"/E/Projects/RealD/Code/DatatableSortControllerpage_mathew.html",
+		"/E/Projects/RealD/Code/DatatableSortController_mathew.java",
+		"/E/Projects/RealD/Code/ShipmentSearchController_first_edit.java",
+		"/E/Projects/RealD/Code/ShipmentSearchPage.html",
+		"/E/Projects/RealD/Code/ShipmentSearchController.java",
+		"/E/Code/Pagination/Salesforce-Pagination/Pagination Page.html",
+		"/E/Projects/SoCXO/SoCXO Chatter Post/paneltest",
+		"/C/Users/amohandasan/Desktop/Responsive Table.html",
+		"/C/Users/amohandasan/Desktop/overlay.html",
+		"/C/Users/amohandasan/Desktop/Data-Loader-28.0-conf-SQL-Server-2012-Express/conf/database-conf.xml",
+		"/C/Users/amohandasan/Desktop/Data-Loader-28.0-conf-SQL-Server-2012-Express/conf/process-conf.xml",
+		"/C/Program Files (x86)/salesforce.com/Data Loader/samples/conf/database-conf.xml",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/socxouserRegistration.cls",
+		"/E/Projects/Sublime/TestenvSoCXO/src/pages/linkedinPage.page",
+		"/E/Projects/Sublime/TestenvSoCXO/src/classes/utilityclass.cls",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build.xml",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build1.xml",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/build.properties",
+		"/E/Salesforce Softwares/salesforce_ant_33.0/sample/unpackaged/package.xml",
+		"/E/Projects/Sublime/Latest SoCXO Code/src/pages/paneltest.page",
+		"/E/Projects/Sublime/SalesforceSocxo/src/pages/paneltest.page",
+		"/E/Projects/Sublime/SoCXO/src/classes/AuthControllerforproduct.cls-meta.xml",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private.html",
+		"/E/Projects/SoCXO/similar socxo original/orig page.html",
+		"/C/Users/amohandasan/Desktop/bootstrapCss.css",
+		"/E/Projects/SoCXO/similar socxo original/authcode",
+		"/E/Projects/SoCXO/similar socxo original/paneltest.html",
+		"/C/Users/amohandasan/Desktop/panel-form-register1/panel-form-register/index.html",
+		"/E/Projects/Sublime/TestenvSoCXO/src/pages/SOCXOmainPage.page",
+		"/C/Users/amohandasan/Desktop/ShipmentLineItemTrigger.tgr",
+		"/C/Users/amohandasan/Downloads/socxoapiPublished.raml",
+		"/E/Projects/SoCXO/SoCXO Chatter Post/paneltest original.html",
+		"/E/Projects/SoCXO/New folder/utilityclass.java",
+		"/C/Users/amohandasan/Desktop/pixeladmin.js",
+		"/C/Users/amohandasan/Desktop/SoCXOWeb.js",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/css",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/pixeladmin",
+		"/C/Users/amohandasan/Desktop/Socxo main/Private_files/SoCXOWeb",
+		"/C/Users/amohandasan/Desktop/_Blurb.cshtml",
+		"/C/Users/amohandasan/Desktop/New folder (2)/Private.html",
+		"/E/Projects/SoCXO/similar socxo original/orig page",
+		"/C/Users/amohandasan/Desktop/socxostyle02.css",
+		"/C/Users/amohandasan/Downloads/Appendix A1 Entry Validation 01 Simple.sql",
+		"/E/Projects/SoCXO/SoCXO Developer Code/facebookconnector",
+		"/E/Projects/SoCXO/SoCXO Developer Code/AuthControllerforproductrefined.cls",
+		"/E/Projects/Sublime/SoCXO/src/classes/TopOpportunityController.cls-meta.xml",
+		"/E/Projects/Sublime/SoCXO/src/classes/linkedinUtility.cls",
+		"/E/Desktop/SF/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleListExtension.cls",
+		"/C/Users/amohandasan/Desktop/finalppt/example/index.htm",
+		"/C/Users/amohandasan/Desktop/finalppt/example/pres.css",
+		"/C/Users/amohandasan/Desktop/finalppt/example/pres.js",
+		"/C/Users/amohandasan/Desktop/ppt11.txt",
+		"/C/Users/amohandasan/Desktop/Quiz/Quiz/index.php",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/pres.js",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/pres.css",
+		"/C/Users/amohandasan/Desktop/htmlpresent-master/htmlpresent-master/index.htm",
+		"/C/Users/amohandasan/Desktop/Dreamflash2014New/Dreamflash2014New/dreamflash.html",
+		"/C/Users/amohandasan/Desktop/style.css",
+		"/C/Users/amohandasan/Desktop/Contact Account.java",
+		"/E/Desktop/SF/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleList.vf",
+		"/E/Code/Pagination/Salesforce-Pagination/Pagination Class.java",
+		"/E/Desktop/SF/sfdc-oauth-playground-master/sfdc-oauth-playground-master/OAuth/src/classes/OAuth.cls",
+		"/D/SoCXO/New folder/SOCXOclass.java",
+		"/D/SoCXO/New folder/SOCXOmainPage.html",
+		"/C/Users/amohandasan/Desktop/popup.html",
+		"/C/Users/amohandasan/Desktop/sfdc-oauth-playground-master/sfdc-oauth-playground-master/OAuth/src/classes/AuthController.cls",
+		"/C/Users/amohandasan/Desktop/TwitterApi.cs",
+		"/C/Users/amohandasan/Desktop/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleList.vf",
+		"/C/Users/amohandasan/Desktop/jQuery-Table-Sort-Filter-Salesforce-master/jQuery-Table-Sort-Filter-Salesforce-master/qPeopleListExtension.cls",
+		"/C/Users/amohandasan/Desktop/Suyati/SalesITV/PurchaseCX.java",
+		"/C/Users/amohandasan/Desktop/Suyati/SalesITV/purchase.html",
+		"/C/Users/amohandasan/Desktop/hello.html",
+		"/C/Users/amohandasan/Desktop/popup.js",
+		"/C/Users/amohandasan/Desktop/1111.html"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"today",
+			"todaysDateStart",
+			"syste",
+			"selectCheckboxInstalled",
+			"selectCheckboxShip",
+			"repopulateCheckboxes",
+			"selectCheckboxShip",
+			"deleteAssetArr",
+			"assetToController",
+			"lstAssetID",
+			"hiddenBlockNewAssets",
+			"totalAssetArr",
+			"repopulateCheckboxes",
+			"system",
+			"errorMsgAsset",
+			"bottomButton",
+			"selectAllShipAssets",
+			"repopulateCheckboxes",
+			"dt",
+			"circuitID",
+			"today.getDate();",
+			"todaysDateStart",
+			"keyRequestName",
+			"errorMsgDate",
+			"checkDateStatus",
+			"rangeFrom",
+			"hiddenBlockNewAssets",
+			"errorMsgAssetBottom",
+			"errorMsgAsset",
+			"errorMsgDate",
+			"errorMsgAsset",
+			"actFuncAssetToController",
+			"assetToController",
+			"retainAssetArr",
+			"selectCheckboxShip",
+			"selectAllShipAssets",
+			"sendemail",
+			"delete",
+			"system",
+			"sendZip",
+			"saveToDocument",
+			"console",
+			"system",
+			"retainAssetArr",
+			"selectCheckboxInstalled",
+			"retainAssetArr",
+			"hiddenBlockNewAssets",
+			"jsonCheckedAssetIds",
+			"circuitID1",
+			"system",
+			"console",
+			"actFuncAssetToController",
+			"assetToController",
+			"checkDateStatus",
+			"uncheckNextPageShip",
+			"retainAssetArr",
+			"isEncryptionEmailReady",
+			"ise",
+			"ship",
+			"shipmen",
+			"shipmeny",
+			"sendEmail",
+			"sendEma",
+			"sendEm",
+			"sendEmailManager",
+			"x",
+			"isEncryptionEmailReady",
+			"lstCheckedKeyRequest",
+			"lstCheckedKeyRequestAsset",
+			"lstCheckedKeyRequest",
+			"circuitID",
+			"jsonnew",
+			"jsondataNewAssets",
+			"dataNewAssets",
+			"jsonDataCurrentShippingAssets",
+			"buildShippingAssetTable",
+			"jsonDataNewAssets",
+			"jsonDataDeleteAssets",
+			"jsonDataNewAssets",
+			"serial",
+			"ser",
+			"lstCheckedKeyRequestAsset",
+			"lstCheckedKeyRequest",
+			"jsonDataDeleteAssets",
+			"jsonCheckedAssetIds",
+			"jsonDataNewAssets",
+			"currentRecordId",
+			"testKey",
+			"send",
+			"jsKeyReqId",
+			"apexKeyReqId",
+			"jsDocID",
+			"get",
+			"downloadAttachments123",
+			"downloadAttachments",
+			"recID",
+			"pageref",
+			"zipContent",
+			"jsZipContent",
+			"zipContent",
+			"zipFileName",
+			"currentRecordId",
+			"mm_workspace",
+			"buildShippingAssetTable",
+			"jsonDataNewAssets",
+			"zipContent",
+			"requestId",
+			"att",
+			"IN",
+			"system",
+			"console",
+			"jsonDataNewAssets",
+			"uncheckNextPage",
+			"window.set",
+			"jsonCheckedAssetIds",
+			"newCAKeyRequest",
+			"jsondata",
+			"newKeyRequest",
+			"lstDeleteAssetID",
+			"jsonDataAssets",
+			"hiddenBlock",
+			"hiddenBlockDeleteAssets",
+			"hiddenBlock",
+			"hiddenBlockNewAssets",
+			"jsonDataAssets",
+			"hiddenblo",
+			"delete",
+			"dele"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"dataDeleteAssets",
+			"dataNewAssets",
+			"jsZipContent",
+			"jsRequestId",
+			"jsAtt",
+			"newAssetArr",
+			"sfUserId",
+			"acc",
+			"GraphDataWrapper",
+			"GraphData",
+			"Country",
+			"acc",
+			"AccountData",
+			"\"",
+			"sfUserId",
+			"fieldPermissionSOCXO_token",
+			"fieldPermissionSOCXO_Service",
+			"j$",
+			"\"\"",
+			"linkedinPopupPanel",
+			"twitterPopupPanel",
+			"fbPopupPanel",
+			"fbPanel",
+			"linkedinPanel",
+			"twitterPanel",
+			"lBtn",
+			"tBtn",
+			"fBtn",
+			"blurbWrapper",
+			"blurbResponse",
+			"categoryResponse",
+			"categoryWrapper",
+			"wrapper1",
+			"blurbResponse",
+			"postedMessage",
+			"postTime",
+			"postedTime",
+			"blurbtopopup",
+			"linkedinIntegrationPage",
+			"facebookIntegrationPage",
+			"mock",
+			"mockApiCallouts",
+			"BlurbControllerPage",
+			"validateUserController",
+			"socxoLoginController",
+			"socxoLoginPage",
+			"\\\"",
+			"BlurbController",
+			"BlurbControllerPage",
+			"socxoLoginPage",
+			"socxoLoginController",
+			"ShipmentCompletion",
+			"tblShipments",
+			"referenceNumber",
+			"sfdeveloper123",
+			"aditya-developer@salesforce.com",
+			"answer1",
+			"j$",
+			"verifier_token",
+			"td",
+			"<td>",
+			"quotingProcess",
+			"opportunityRef"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "RealD Phase3.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

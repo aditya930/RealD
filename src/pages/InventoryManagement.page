@@ -1,0 +1,14 @@
+<apex:page standardController="Inventory__c" name="Inventory Management" label="Inventory Management" Title="Inventory Management Tools" Sidebar="False">
+<H2> *Inventory Tools are currently in Beta. Please report any issues to <a href="mailto:enelson@reald.com?subject=Salesforce%20Inventory%20Issue%20">enelson@reald.com</a> </H2>
+   <apex:tabPanel switchType="client" selectedTab="Inventory" id="theTabPanel" headerSpacing="2">
+      <apex:tab label="Inventory Adjustments" name="adjustments" id="tab1" Rendered="True" >
+          <apex:enhancedList listid="00B60000006O0Pa" type="Inventory__c" height="600" rowsPerPage="50" id="InventoryAdjustments" customizable="False"/>
+      </apex:tab>
+      <apex:tab label="Manufacturing Forecasts" name="manufacturing" id="tab4" Rendered="True">
+         <apex:enhancedList listid="00B60000006O0Pb" type="Inventory__c" height="600" rowsPerPage="50" id="ManufacturingForecasts" customizable="False"/>
+      </apex:tab>
+      <apex:tab label="Month End" name="monthend" id="tab3" Rendered="True">
+          <apex:include pageName="MonthEndInventory" />
+      </apex:tab>
+   </apex:tabPanel>
+</apex:page>

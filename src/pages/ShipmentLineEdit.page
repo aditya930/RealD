@@ -1,0 +1,120 @@
+<apex:page StandardController="Shipment_Line_Item__c"
+    extensions="ShipmentLineEditController" standardStylesheets="true"
+    showHeader="true" id="thePage">
+    <apex:sectionHeader title="{!$ObjectType.Shipment_Line_Item__c.label}"
+        subtitle="{!Shipment_Line_Item__c.name}" />
+
+    <script language="JavaScript1.2" src="/js/functions.js"></script>
+
+    <script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script>
+    <script type="Text/JavaScript">
+     var originalScreenId="{! Shipment_Line_Item__c.Screen__c}";
+     var screenFieldId = '';
+     
+     function captureScreenField(screen)
+     {
+     	screenFieldId = screen.Id;
+     }
+     function alertDuplicateScreen()
+     { 
+        //alert('1');
+        if(originalScreenId != "")
+           originalScreenId = originalScreenId.substring(0,15);
+        
+        var screenId = 'thePage:theForm:theBlock:theSection:screen_lkid';
+        
+        //alert('screenId '+screenId);
+        var newScreenId = getElementByIdCS(screenId).value;
+        //alert('2 '+newScreenId);
+        
+        
+        if(newScreenId != "")
+           newScreenId = newScreenId.substring(0,15);
+        
+        //look up the screen's RealD_3D_Installed__c value
+        sforce.connection.sessionId = '{!$Api.Session_ID}';
+        if(newScreenId =="" || newScreenId =="000000000000000")
+          return true;
+          
+        try
+        {       
+            var qr = sforce.connection.query("SELECT id,RealD_3D_Installed__c FROM Screens__c where Id = '"+newScreenId+"'");       
+            var records = qr.getArray("records");       
+            //alert(':::::--> '+newScreenId);
+            if (records.length > 0)
+            {
+              for (var i=0;i< records.length;i++)
+              {
+                 /*alert(":::> "+records[i].get("RealD_3D_Installed__c") 
+                     + "-{!shipmentWithScreen}- newScreenId:"+newScreenId
+                     + ", originalScreenId: "+originalScreenId);
+                 */
+                 if(records[i].get("RealD_3D_Installed__c") == 'true' 
+                     && "{!shipmentWithScreen}" != "" 
+                     && newScreenId !="" 
+                     && newScreenId !="000000000000000")
+                 {
+                    var r = confirm("The screen selected for this shipment already has at least one system installed.");
+                    return r; 
+                 }
+                 return true;
+              }
+            }
+        }
+        catch (error)
+        {
+            alert(error.faultstring);
+            return false;
+        }
+        
+        
+        /*   
+        //alert('3 '+newScreenId + '-{!shipmentWithScreen}-' + originalScreenId );
+        if("{!shipmentWithScreen}" != "" && originalScreenId != newScreenId && newScreenId !="" && newScreenId !='000000000000000')
+        {
+          alert("The screen selected for this shipment already has at least one system installed.");// [New]"+newScreenId+" [Old]"+originalScreenId);
+          originalScreenId = newScreenId;
+          
+        }
+        */
+        return null;  
+          
+        
+     }
+  </script>
+
+    <apex:form id="theForm">
+        <apex:pageBlock title="Shipment Line Item Edit" mode="edit" id="theBlock">
+          <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton onclick="if(!alertDuplicateScreen()) return false;" action="{!save}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Shipment Information" columns="2"
+                collapsible="false" id="theSection">
+                <apex:inputField value="{! Shipment_Line_Item__c.Shipment__c}"
+                    required="true" />
+                <apex:outputField value="{! Shipment_Line_Item__c.Line_Status__c}" />
+                <apex:inputField value="{! Shipment_Line_Item__c.SourceWarehouse__c}"
+                    required="true" />
+                <apex:inputField value="{! Shipment_Line_Item__c.Screen__c}" id="screen">
+                    <!-- apex:actionSupport event="onchange" action="alertDuplicateScreen"/-->
+                </apex:inputField>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Product Information" columns="2"
+                collapsible="False">
+                <apex:inputField value="{! Shipment_Line_Item__c.Product__c}"
+                    required="true" />
+                <apex:inputField value="{! Shipment_Line_Item__c.Quantity__c}" />
+                <apex:inputField value="{! Shipment_Line_Item__c.SerialNumber__c}" />
+
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Returns" columns="2"
+            	collapsible="False">
+            	<apex:inputField value="{! Shipment_Line_Item__c.RMA__c}">
+            	</apex:inputField>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

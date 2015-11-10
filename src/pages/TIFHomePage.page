@@ -1,0 +1,20 @@
+<apex:page id="loginPage" showHeader="false" title="{!$Label.site.site_login}" controller="TIFHomepageController" action="{!getRedirectTo}">
+  <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">  
+      <apex:outputPanel layout="block" style="margin: 10px auto; width: 500px;">
+        <c:TIFSiteLogin id="siteLogin"/>
+        <br/>
+        <apex:panelGrid columns="3">
+          <apex:outputLink value="{!$Page.SiteRegister}" rendered="{!$Site.RegistrationEnabled}">Create New User</apex:outputLink>
+          <apex:outputText >|</apex:outputText>
+          <apex:outputLink value="{!$Page.TheaterInfoForm}">Anonymous User Form</apex:outputLink>
+        </apex:panelGrid>
+        <apex:outputPanel >
+          
+        </apex:outputPanel>
+        
+      </apex:outputPanel>
+     
+    </apex:define>
+  </apex:composition>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="HistoryController" title="Audit History">
+ <apex:form >
+ <apex:pagemessages ></apex:pagemessages>
+ <apex:pageBlock title="Audit Objects Fields">
+  <apex:pageBlockSection columns="1">
+  <apex:pageBlockSectionItem >
+      Start Date: <apex:inputText value="{!startDate}" size="10" id="strt" onfocus="DatePicker.pickDate(false, this , false);" />   
+  </apex:pageBlockSectionItem>
+  <apex:pageBlockSectionItem >
+      End Date: <apex:inputText value="{!endDate}" size="10" id="end" onfocus="DatePicker.pickDate(false, this , false);"/>
+  </apex:pageBlockSectionItem>
+  <apex:commandButton value="Extract History" action="{!ExtractHistory}"/>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page StandardController="Return_Log__c" extensions="NewReturnLogController" tabStyle="Return_Log__c" standardStylesheets="TRUE">
+
+<apex:SectionHeader title="New Return Log"/>
+    <flow:interview name="New_Return_Log" interview="{!currentFlow}" finishLocation="{!newReturnLog}"/>
+   
+</apex:page>

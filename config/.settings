@@ -1,0 +1,19 @@
+{
+    "username": "suyati.dev@reald.com.ext", 
+    "environment": "sandbox", 
+    "project_name": "RealD Phase3", 
+    "workspace": "E:\\Projects\\Sublime", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "3C34PY647JQ4B9FGEH94XZEZHHG69DNQ", 
+    "metadata_container": "1dcm0000000HAr9AAG", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}
